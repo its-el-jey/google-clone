@@ -5,12 +5,12 @@ import MicIcon from '@material-ui/icons/Mic';
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { useStateValue } from '../StateProvider';
-import { actionType } from '../reducer';
+import { actionTypes } from '../reducer';
 
 
 function Search({ hideButtons = false}) {
   // const [state, dispatch] = useStateValue();
-  const [{}, dispatch] = useStateValue();
+  const [{ }, dispatch] = useStateValue();
 
   const [input, setInput] = useState('');
   const history = useHistory();
@@ -21,7 +21,7 @@ function Search({ hideButtons = false}) {
 
     // put the search term inside the data layer
     dispatch({
-      type: actionType.SET_SEARCH_TERM,
+      type: actionTypes.SET_SEARCH_TERM,
       term: input 
     })
     
